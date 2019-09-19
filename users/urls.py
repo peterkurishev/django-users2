@@ -30,10 +30,11 @@ urlpatterns = [
         template_name='users/password_change_done.html'),
         name='users_password_change_done'),
     url(r'^password_reset/$', auth_views.PasswordResetView.as_view(
-            template_name='users/password_reset_form.html',
-            email_template_name='users/password_reset_email.html',
-            subject_template_name='users/password_reset_subject.html',
-            success_url='done'),
+        template_name='users/password_reset_form.html',
+        email_template_name='users/password_reset_email.html',
+        subject_template_name='users/password_reset_subject.html',
+        from_email="info@sfera.media",
+        success_url='done'),
         name='users_password_reset'),
     url(r'^password_reset/done/$',
         auth_views.PasswordResetDoneView.as_view(
